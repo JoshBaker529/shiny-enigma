@@ -12,17 +12,17 @@ Header::~Header() {}
 const uint8_t &Header::operator[](int index) const { return raw_header[index]; }
 
 void Header::read(std::ifstream &inFile) {
-  char c;
+  uint8_t c;
   for (int i = 0; i < size; i++) {
-    inFile.get(c);
-    raw_header[i] = c;
+    inFile.read(reinterpret_cast<char *>(&c), 1);
+    raw_header[i] = static_cast<uint8_t>(c);
   }
 }
 
 bool Header::check_nes() {
-  if (raw_header[0] != static_cast<uint8_t>('N') ||
-      raw_header[1] != static_cast<uint8_t>('E') ||
-      raw_header[2] != static_cast<uint8_t>('S') ||
+  if (raw_header[0] != static_cast<uint8_t>(0x4E) ||
+      raw_header[1] != static_cast<uint8_t>(0x45) ||
+      raw_header[2] != static_cast<uint8_t>(0x53) ||
       raw_header[3] != static_cast<uint8_t>(0x1A))
     return false;
 
