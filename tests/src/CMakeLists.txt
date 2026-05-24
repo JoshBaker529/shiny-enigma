@@ -7,6 +7,7 @@ set(header_test_files
   start_with_nes.cpp
   check_PRG_ROM_size.cpp
   check_CHR_ROM_size.cpp
+  flag_nametable_mirroring.cpp
 )
 
 enable_testing()
