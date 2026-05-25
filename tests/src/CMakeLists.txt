@@ -11,6 +11,7 @@ set(header_test_files
   flag_battery.cpp
   flag_trainer.cpp
   flag_alt_nametable_layout.cpp
+  flag_VS_Unisystem.cpp
 )
 
 enable_testing()
