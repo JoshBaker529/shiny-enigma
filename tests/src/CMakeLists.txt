@@ -8,6 +8,7 @@ set(header_test_files
   check_PRG_ROM_size.cpp
   check_CHR_ROM_size.cpp
   flag_nametable_mirroring.cpp
+  flag_battery.cpp
 )
 
 enable_testing()
