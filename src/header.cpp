@@ -51,6 +51,11 @@ bool Header::get_flag_VS_Unisystem() { return (raw_header[7] & 1); }
 
 bool Header::get_flag_Playchoice_10() { return (raw_header[7] >> 1) & 1; }
 
+ConsoleType Header::get_flag_console_type() {
+  // First two bits
+  return static_cast<ConsoleType>(raw_header[7] & 3);
+}
+
 bool Header::is_20_format() {
   if ((raw_header[7] & 0x0C) == 0x08)
     return true;

@@ -10,6 +10,9 @@
 // The different nametable mirroring modes
 enum NametableMirroring { VERTICAL, HORIZONTAL };
 
+// Different types of consoles the game was made for
+enum ConsoleType { NES, VS_SYSTEM, PLAYCHOICE_10, EXTENDED };
+
 // TV System flags used in bytes 9 and 10 of the header
 enum TVSystem { NTSC, PAL, DUAL };
 
@@ -67,6 +70,9 @@ public:
   // after the CHR data
   // Not really used with the NES PPU
   bool get_flag_Playchoice_10();
+
+  // Returns the console type
+  ConsoleType get_flag_console_type();
 
   // Returns whether the header format is NES 2.0
   bool is_20_format();
