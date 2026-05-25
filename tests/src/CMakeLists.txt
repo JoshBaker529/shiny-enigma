@@ -13,6 +13,7 @@ set(header_test_files
   flag_alt_nametable_layout.cpp
   flag_VS_Unisystem.cpp
   flag_Playchoice_10.cpp
+  flag_console_type.cpp
 )
 
 enable_testing()
