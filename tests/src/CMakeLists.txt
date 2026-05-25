@@ -10,6 +10,7 @@ set(header_test_files
   flag_nametable_mirroring.cpp
   flag_battery.cpp
   flag_trainer.cpp
+  flag_alt_nametable_layout.cpp
 )
 
 enable_testing()
