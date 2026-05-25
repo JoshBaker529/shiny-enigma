@@ -15,6 +15,7 @@ int flag_trainer(int argc, char *argv[]) {
     return -1;
   }
   header.read(inFile);
+  inFile.close();
   value = header.get_flag_has_trainer();
   if (!value) {
     std::cout << "Function returned false, should have been true";
@@ -27,8 +28,9 @@ int flag_trainer(int argc, char *argv[]) {
     return -1;
   }
   header.read(inFile);
+  inFile.close();
   value = header.get_flag_has_trainer();
-  if (!value) {
+  if (value) {
     std::cout << "Function returned true, should have been false";
     return 1;
   }
