@@ -14,6 +14,7 @@ set(header_test_files
   flag_VS_Unisystem.cpp
   flag_Playchoice_10.cpp
   flag_console_type.cpp
+  flag_is_20_format.cpp
 )
 
 enable_testing()
