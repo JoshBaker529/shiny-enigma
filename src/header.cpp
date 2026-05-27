@@ -148,9 +148,19 @@ bool Header::is_20_format() {
 // NES 2.0 formatting
 
 int Header::get_PRG_RAM_size() {
-  if (raw_header[8] == 0)
+  int value;
+  if (is_20_format()) {
+    value = raw_header[10] & 0xF;
+    if (value == 0)
+      return 0;
+    return 64 << value;
+  }
+
+  value = raw_header[8];
+  if (value == 0) {
     return 8 * kilobyte;
-  return raw_header[8] * (8 * kilobyte);
+  }
+  return value * (8 * kilobyte);
 }
 
 TVSystem Header::get_TV_system_9() {
