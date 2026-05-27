@@ -60,7 +60,7 @@ int check_PRG_ROM_size(int argc, char *argv[]) {
   size = header.get_PRG_ROM_size();
 
   // This file has the LSB as 0x72 and the exponent nibble of F
-  // Should have 2 ^ 28 * 5 bytes, or 1,342,117,280 bytes
+  // Should have 2 ^ 28 * 5 bytes, or 1,342,177,280 bytes
   // I just picked numbers, there is no significance to them
   if (size != 1'342'177'280) {
     std::cout << "Incorrect size: " << size << " should be " << 1'342'177'280

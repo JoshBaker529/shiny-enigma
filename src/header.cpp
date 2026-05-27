@@ -73,7 +73,48 @@ int Header::get_PRG_ROM_size() {
   return (value * size);
 }
 
-int Header::get_CHR_ROM_size() { return raw_header[5] * (8 * kilobyte); }
+int Header::get_CHR_ROM_size() {
+
+  int value = 0;
+
+  // MSB
+  int msb = raw_header[9] >> 4;
+
+  // Is it in exponent-multiplier format?
+  if (msb == 0xF) {
+
+    /*
+      Multiplier formatting:
+
+      EEEE EEMM
+      |||| ||++---- Multipler: MM * 2 + 1
+      ++++-++------ Exponent:  2 ^ EEEEEE
+
+      Final calculation:
+      [ 2 ^ EEEEEE ] * [ MM * 2 + 1 ]
+
+
+    */
+
+    int lsb = raw_header[5];
+    int multiplier = lsb & 3;
+    int exponent = (lsb & ~3) >> 2;
+
+    value = std::pow(2, exponent);
+    value *= (multiplier * 2 + 1);
+
+    return value;
+  }
+
+  // Not exponent-multiplier format
+  value |= (msb << 8);
+  // LSB
+  value |= raw_header[5];
+
+  // value now holds the 12-bit size
+  int size = (8 * kilobyte);
+  return (value * size);
+}
 
 NametableMirroring Header::get_flag_nametable_mirroring() {
   return static_cast<NametableMirroring>(raw_header[6] & 1);
