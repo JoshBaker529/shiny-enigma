@@ -16,6 +16,8 @@ set(header_test_files
   flag_console_type.cpp
   flag_is_20_format.cpp
   check_PRG_RAM_size.cpp
+  flag_TV_system_9.cpp
+  flag_TV_system_10.cpp
 )
 
 enable_testing()
