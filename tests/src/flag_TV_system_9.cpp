@@ -25,7 +25,7 @@ int flag_TV_system_9(int argc, char *argv[]) {
 
   inFile.open("../../inputs/flag_TV_system_9_PAL.nes_test");
   if (!inFile) {
-    std::cout << "Could not open NTSC file\n";
+    std::cout << "Could not open PAL file\n";
     return -1;
   }
   header.read(inFile);
