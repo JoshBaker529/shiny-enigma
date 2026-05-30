@@ -18,6 +18,7 @@ set(header_test_files
   check_PRG_RAM_size.cpp
   flag_TV_system_9.cpp
   flag_TV_system_10.cpp
+  flag_has_PRG_RAM.cpp
 )
 
 enable_testing()

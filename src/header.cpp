@@ -177,6 +177,11 @@ TVSystem Header::get_TV_system_10() {
   return TVSystem::DUAL;
 }
 
-bool Header::get_flag_has_PRG_RAM() { return (raw_header[10] >> 4) & 1; }
+bool Header::get_flag_has_PRG_RAM() {
+  if (is_20_format()) {
+    return (raw_header[10] & 0xF) > 0;
+  }
+  return (raw_header[10] >> 4) & 1;
+}
 
 bool Header::get_flag_bus_conflicts() { return (raw_header[10] >> 5) & 1; }

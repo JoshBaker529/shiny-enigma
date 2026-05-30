@@ -103,11 +103,11 @@ public:
   bool get_flag_bus_conflicts();
 
 private:
-  // The raw data held in the header
-  std::array<uint8_t, 16> raw_header;
-
   // The size of the header in bytes
   static const int size = 16;
+
+  // The raw data held in the header
+  std::array<uint8_t, size> raw_header;
 };
 
 #endif // !HEADER_HPP
