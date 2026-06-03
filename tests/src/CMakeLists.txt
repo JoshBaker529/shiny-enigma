@@ -20,6 +20,7 @@ set(header_test_files
   flag_TV_system_10.cpp
   flag_has_PRG_RAM.cpp
   flag_bus_conflicts.cpp
+  check_PRG_NVRAM_size.cpp
 )
 
 enable_testing()
