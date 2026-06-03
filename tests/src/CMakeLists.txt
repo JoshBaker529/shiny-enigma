@@ -19,6 +19,7 @@ set(header_test_files
   flag_TV_system_9.cpp
   flag_TV_system_10.cpp
   flag_has_PRG_RAM.cpp
+  flag_bus_conflicts.cpp
 )
 
 enable_testing()
