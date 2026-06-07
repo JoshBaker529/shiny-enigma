@@ -22,6 +22,7 @@ set(header_test_files
   flag_bus_conflicts.cpp
   check_PRG_NVRAM_size.cpp
   check_CHR_RAM_size.cpp
+  check_CHR_NVRAM_size.cpp
 )
 
 enable_testing()
