@@ -16,6 +16,9 @@ enum ConsoleType { NES, VS_SYSTEM, PLAYCHOICE_10, EXTENDED };
 // TV System flags used in bytes 9 and 10 of the header
 enum TVSystem { NTSC, PAL, DUAL };
 
+// The different timing modes
+enum TimingMode { NTSC_NES, PAL_NES, MULTIREGION, DENDY };
+
 // Holds all the information from
 class Header {
 public:
@@ -92,6 +95,9 @@ public:
 
   // Returns the size of the CHR NVRAM
   int get_CHR_NVRAM_size();
+
+  // Returns the timing mode
+  TimingMode get_timing_mode();
 
   //////////////////////////////////////////////////////////////////////////////
   // iNES formatting

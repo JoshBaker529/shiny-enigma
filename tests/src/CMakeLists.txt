@@ -23,6 +23,7 @@ set(header_test_files
   check_PRG_NVRAM_size.cpp
   check_CHR_RAM_size.cpp
   check_CHR_NVRAM_size.cpp
+  flag_timing_mode.cpp
 )
 
 enable_testing()
