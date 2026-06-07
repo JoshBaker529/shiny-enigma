@@ -183,6 +183,14 @@ int Header::get_PRG_NVRAM_size() {
   return (64 << value);
 }
 
+int Header::get_CHR_RAM_size() {
+  int value;
+  value = raw_header[11] & 0xF;
+  if (value == 0)
+    return 0;
+  return 64 << value;
+}
+
 //////////////////////////////////////////////////////////////////////////////
 // iNES formatting
 //////////////////////////////////////////////////////////////////////////////
