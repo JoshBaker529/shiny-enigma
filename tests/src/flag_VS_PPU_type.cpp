@@ -19,14 +19,14 @@ int flag_VS_PPU_type(int argc, char *argv[]) {
 
   int type = header.get_VS_PPU_type();
   if (type != 0) {
-    std::cout << "Size was non-zero given a size of 0\n";
+    std::cout << "Function returned " << type << ", should have returned 0";
     return 1;
   }
 
   // Size of F
   inFile.open("../../inputs/flag_VS_PPU_type_F.nes_test");
   if (!inFile) {
-    std::cout << "Could not open 0 file\n";
+    std::cout << "Could not open F file\n";
     return -1;
   }
   header.read(inFile);
@@ -34,7 +34,8 @@ int flag_VS_PPU_type(int argc, char *argv[]) {
 
   type = header.get_VS_PPU_type();
   if (type != 0xF) {
-    std::cout << "Size was non-zero given a size of 0\n";
+    std::cout << "Function returned " << type << ", should have returned "
+              << 0xF;
     return 1;
   }
   return 0;
