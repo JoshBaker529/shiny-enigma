@@ -102,6 +102,12 @@ public:
   // Returns the VS PPU type
   int get_VS_PPU_type();
 
+  // Returns the VS Hardware type
+  int get_VS_hardware_type();
+
+  // Returns the Extended Console Type
+  int get_extended_console_type();
+
   //////////////////////////////////////////////////////////////////////////////
   // iNES formatting
   //////////////////////////////////////////////////////////////////////////////

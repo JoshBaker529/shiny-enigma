@@ -206,6 +206,10 @@ TimingMode Header::get_timing_mode() {
 
 int Header::get_VS_PPU_type() { return raw_header[13] & 0xF; }
 
+int Header::get_VS_hardware_type() { return (raw_header[13] & 0xF0) >> 4; }
+
+int Header::get_extended_console_type() { return get_VS_PPU_type(); }
+
 //////////////////////////////////////////////////////////////////////////////
 // iNES formatting
 //////////////////////////////////////////////////////////////////////////////

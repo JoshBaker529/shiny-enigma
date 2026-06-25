@@ -25,6 +25,7 @@ set(header_test_files
   check_CHR_NVRAM_size.cpp
   flag_timing_mode.cpp
   flag_VS_PPU_type.cpp
+  flag_VS_hardware_type.cpp
 )
 
 enable_testing()
